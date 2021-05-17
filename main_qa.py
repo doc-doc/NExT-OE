@@ -49,7 +49,7 @@ def main(args):
     vqa = VideoQA(vocab_qns, vocab_ans, train_loader, val_loader, glove_embed_qns, glove_embed_ans,
                   checkpoint_path, model_type, model_prefix, vis_step,lr_rate, batch_size, epoch_num)
 
-    ep = 6
+    ep = 36
     acc = 0.2163
     model_file = f'{model_type}-{model_prefix}-{ep}-{acc:.4f}.ckpt'
 
