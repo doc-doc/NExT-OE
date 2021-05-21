@@ -52,7 +52,7 @@ It will train the model and save to ['models']. (*The results may be slightly di
 | [HCRN](https://openaccess.thecvf.com/content_CVPR_2020/papers/Le_Hierarchical_Conditional_Relation_Networks_for_Video_Question_Answering_CVPR_2020_paper.pdf) [CVPR20]   |   GloVe   | 12.53 | 15.37 | 45.29 | 20.25 | 
 | [HGA](https://ojs.aaai.org//index.php/AAAI/article/view/6767) [AAAI20]    |   GloVe   | **14.76** | 14.90 | **46.60** | **21.48** |
 
-## Multi-choice QA v.s Open-ended QA
+## Multi-choice QA *vs.* Open-ended QA
 ![vis mc_oe](./images/res-mc-oe.png)
 ## Citation
 ```
