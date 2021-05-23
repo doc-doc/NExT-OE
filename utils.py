@@ -1,9 +1,7 @@
-import skimage.io as sio
 import numpy as np
 import torch
 from torchvision import transforms as trn
 from torch.autograd import Variable
-from skimage.transform import resize
 import json
 import os
 import os.path as osp
@@ -72,58 +70,3 @@ def pkdump(data, file):
     with open(file, 'wb') as fp:
         pkl.dump(data, fp)
 
-def load_image_fn(filename, H, W):
-    """
-    load image and transfer to torch tensor
-    :param filename:
-    :return:
-    """
-    img = sio.imread(filename)
-
-    img = resize(img, (H, W), mode='constant')
-
-
-    if len(img.shape) == 2:
-        img = img[:, :, np.newaxis]
-        img = np.concatenate((img, img, img), axis=2)
-
-    img = img.astype('float32') / 255.0
-    img = torch.from_numpy(img.transpose([2, 0, 1])).cuda()
-    with torch.no_grad():
-        img = Variable(preprocess(img))
-
-    return img
-
-
-def get_clip(clip, verbose=True):
-    """
-    Loads a clip to be fed to C3D for classification.
-    TODO: should I remove mean here?
-
-    Parameters
-    ----------
-    clip_name: str
-        the name of the clip (subfolder in 'data').
-    verbose: bool
-        if True, shows the unrolled clip (default is True).
-
-    Returns
-    -------
-    Tensor
-        a pytorch batch (n, ch, fr, h, w).
-    """
-
-    # clip = sorted(glob(join('data', clip_name, '*.png')))
-    clip = np.array([resize(sio.imread(frame), output_shape=(112, 200), preserve_range=True, mode='constant') for frame in clip])
-    clip = clip[:, :, 44:44 + 112, :]  # crop centrally
-
-    if verbose:
-        clip_img = np.reshape(clip.transpose(1, 0, 2, 3), (112, 16 * 112, 3))
-        sio.imshow(clip_img.astype(np.uint8))
-        sio.show()
-
-    clip = clip.transpose(3, 0, 1, 2)  # ch, fr, h, w
-    # clip = np.expand_dims(clip, axis=0)  # batch axis
-    clip = np.float32(clip)
-
-    return torch.from_numpy(clip)
