@@ -22,7 +22,7 @@ Please download the pre-computed features and QA annotations from [here](https:/
 - ```['nextqa.zip']```: Annotations of QAs and GloVe Embeddings (open-ended version). 
 - ```['models.zip']```: Learned HGA model (open-ended version). 
 
-After downloading the data, please create a folder ```['data']``` at the same directory as ```['NExT-OE']```, then unzip the video features into it. You will have directories like ```['data/vid_feat/', and 'NExT-OE/']``` in your workspace. Please unzip the files in ```['nextqa.zip']``` into ```['NExT-OE/dataset/nextqa']``` and ```['models.zip']``` into ```['NExT-OE/models/']```. 
+After downloading the data, please create a folder ```['data/feats']``` at the same directory as ```['NExT-OE']```, then unzip the video features into it. You will have directories like ```['data/feats/vid_feat/', and 'NExT-OE/']``` in your workspace. Please unzip the files in ```['nextqa.zip']``` into ```['NExT-OE/dataset/nextqa']``` and ```['models.zip']``` into ```['NExT-OE/models/']```. 
 
 
 ## Usage
