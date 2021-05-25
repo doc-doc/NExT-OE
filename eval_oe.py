@@ -91,7 +91,7 @@ def evaluate(res_file, ref_file):
     wups0_c *= 100
     wups0_all *= 100
 
-    print('CW\tCH\tAll\tTPN\tTC\tALL\tDB\tDC\tDL\tDO\tAll\tAll')
+    print('CW\tCH\tWUPS_C\tTPN\tTC\tWUPS_T\tDB\tDC\tDL\tDO\tWUPS_D\tWUPS')
     print('{:.2f}\t{:.2f}\t{:.2f}\t{:.2f}\t{:.2f}\t{:.2f}\t{:.2f}\t{:.2f}\t{:.2f}\t{:.2f}\t{:.2f}\t{:.2f}'
           .format(wups0['CW'], wups0['CH'], wups0_e,  wups0['TN'], wups0['TC'],wups0_t,
                   wups0['DB'],wups0['DC'], wups0['DL'], wups0['DO'], wups0_c, wups0_all))
@@ -110,5 +110,5 @@ if __name__ == "__main__":
 
     mode = 'val'
     model = 'HGA'
-    result_file = '{}-same-att-qns23ans7-{}.json'.format(model, mode)
+    result_file = '{}-same-att-qns23ans7-{}-example.json'.format(model, mode)
     main(result_file, mode)

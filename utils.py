@@ -1,7 +1,3 @@
-import numpy as np
-import torch
-from torchvision import transforms as trn
-from torch.autograd import Variable
 import json
 import os
 import os.path as osp
@@ -14,11 +10,6 @@ def set_gpu_devices(gpu_id):
         gpu = str(gpu_id)
     os.environ['CUDA_VOSIBLE_DEVICES'] = gpu
 
-
-preprocess = trn.Compose([
-        #trn.ToTensor(),
-        trn.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-])
 
 def load_file(filename):
     """

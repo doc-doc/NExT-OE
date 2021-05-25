@@ -1,5 +1,7 @@
-from networks import EncoderRNN, DecoderRNN, VQAModel
+from networks import EncoderRNN, DecoderRNN
+from networks.VQAModel import EVQA, UATT, STVQA, CoMem, HME, HGA
 from utils import *
+import torch
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 import torch.nn as nn
 import time
@@ -48,7 +50,7 @@ class VideoQA():
 
             ans_decoder = DecoderRNN.AnsAttSeq(ans_vocab_size, max_ans_len, hidden_dim, word_dim, self.glove_embed_ans,
                                              n_layers=1, input_dropout_p=0.3, rnn_dropout_p=0, rnn_cell='gru')
-            self.model = VQAModel.EVQA(vid_encoder, qns_encoder, ans_decoder, self.device)
+            self.model = EVQA.EVQA(vid_encoder, qns_encoder, ans_decoder, self.device)
 
         elif self.model_type == 'UATT':
             #TIP17
@@ -61,7 +63,7 @@ class VideoQA():
             ans_decoder = DecoderRNN.AnsUATT(ans_vocab_size, max_ans_len, hidden_dim, word_dim,
                                              self.glove_embed_ans, n_layers=2, input_dropout_p=0.3,
                                              rnn_dropout_p=0.5, rnn_cell='lstm')
-            self.model = VQAModel.UATT(vid_encoder, qns_encoder, ans_decoder, self.device)
+            self.model = UATT.UATT(vid_encoder, qns_encoder, ans_decoder, self.device)
 
         elif self.model_type == 'STVQA':
             #CVPR17
@@ -74,7 +76,7 @@ class VideoQA():
                                                 input_dropout_p=0.3, rnn_dropout_p=0.5, n_layers=2, rnn_cell='lstm')
             ans_decoder = DecoderRNN.AnsAttSeq(ans_vocab_size, max_ans_len, hidden_dim, word_dim, self.glove_embed_ans,
                                               input_dropout_p=0.3, rnn_dropout_p=0, n_layers=1, rnn_cell='gru')
-            self.model = VQAModel.STVQA(vid_encoder, qns_encoder, ans_decoder, att_dim, self.device)
+            self.model = STVQA.STVQA(vid_encoder, qns_encoder, ans_decoder, att_dim, self.device)
 
 
         elif self.model_type == 'CoMem':
@@ -91,7 +93,7 @@ class VideoQA():
             ans_decoder = DecoderRNN.AnsAttSeq(ans_vocab_size, max_ans_len, hidden_dim, word_dim, self.glove_embed_ans,
                                              n_layers=1, input_dropout_p=0.3, rnn_dropout_p=0, rnn_cell='gru')
 
-            self.model = VQAModel.CoMem(vid_encoder, qns_encoder, ans_decoder, max_vid_len, max_qns_len, self.device)
+            self.model = CoMem.CoMem(vid_encoder, qns_encoder, ans_decoder, max_vid_len, max_qns_len, self.device)
 
 
         elif self.model_type == 'HME':
@@ -107,7 +109,7 @@ class VideoQA():
             ans_decoder = DecoderRNN.AnsHME(ans_vocab_size, max_ans_len, hidden_dim, word_dim, self.glove_embed_ans,
                                              n_layers=2, input_dropout_p=0.3, rnn_dropout_p=0.5, rnn_cell='lstm')
 
-            self.model = VQAModel.HME(vid_encoder, qns_encoder, ans_decoder, max_vid_len, max_qns_len, self.device)
+            self.model = HME.HME(vid_encoder, qns_encoder, ans_decoder, max_vid_len, max_qns_len, self.device)
 
 
         elif self.model_type == 'HGA':
@@ -122,7 +124,7 @@ class VideoQA():
             ans_decoder = DecoderRNN.AnsAttSeq(ans_vocab_size, max_ans_len, hidden_dim, word_dim, self.glove_embed_ans,
                                               n_layers=1, input_dropout_p=0.3, rnn_dropout_p=0, rnn_cell='gru')
 
-            self.model = VQAModel.HGA(vid_encoder, qns_encoder, ans_decoder, max_vid_len, max_qns_len, self.device)
+            self.model = HGA.HGA(vid_encoder, qns_encoder, ans_decoder, max_vid_len, max_qns_len, self.device)
 
 
         params = [{'params':self.model.parameters()}]

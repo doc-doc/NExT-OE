@@ -17,7 +17,7 @@ def main(args):
         num_worker = 8
     spatial = False
     if spatial:
-        #for STVQA only
+        #for STVQA
         video_feature_path = '../data/feats/spatial/'
         video_feature_cache = '../data/feats/cache_spatial/'
     else:
@@ -26,6 +26,7 @@ def main(args):
 
     dataset = 'nextqa'
     sample_list_path = 'dataset/{}/'.format(dataset)
+
     #We separate the dicts for qns and ans, in case one wants to use different word-dicts for them.
     vocab_qns = pkload('dataset/{}/vocab.pkl'.format(dataset))
     vocab_ans = pkload('dataset/{}/vocab.pkl'.format(dataset))
@@ -34,7 +35,7 @@ def main(args):
     glove_embed_qns = 'dataset/{}/{}_embed.npy'.format(dataset, word_type)
     glove_embed_ans = 'dataset/{}/{}_embed.npy'.format(dataset, word_type)
     checkpoint_path = 'models'
-    model_type = 'HGA'
+    model_type = 'UATT'
 
     model_prefix = 'same-att-qns23ans7'
     vis_step = 116
