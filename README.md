@@ -1,6 +1,6 @@
 # NExT-QA <img src="images/logo.png" height="64" width="128">
 
-We reproduce some SOTA VideoQA methods to provide benchmark results for our NExT-QA dataset published on CVPR2021 (with 1 Strong Accept and 2 Weak Accepts). 
+We reproduce some SOTA VideoQA methods to provide benchmark results for our NExT-QA dataset accepted to CVPR2021 (with 1 'Strong Accept' and 2 'Weak Accept's). 
 
 NExT-QA is a VideoQA benchmark targeting the explanation of video contents. It challenges QA models to reason about the causal and temporal actions and understand the rich object interactions in daily activities. We set up both multi-choice and open-ended QA tasks on the dataset. <strong>This repo. provides resources for open-ended QA</strong>; multi-choice QA is found in [NExT-QA](https://github.com/doc-doc/NExT-QA). For more details, please refer to our [dataset](https://doc-doc.github.io/junbin.github.io/docs/nextqa.html) page.
 
@@ -64,7 +64,7 @@ It will train the model and save to ['models']. (*The results may be slightly di
 }
 ```
 ## Todo
-1. [ ] Open online [evaluation server]() and release test data.
+1. [ ] Open online evaluation server and release test data.
 2. [ ] Release spatial feature.
 3. [ ] Release RoI feature.
 ## Acknowledgement
