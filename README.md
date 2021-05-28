@@ -43,7 +43,7 @@ If you want to train the model, please run
 ```
 It will train the model and save to ['models']. (*The results may be slightly different depending on the environments*)
 ## Results
-| Methods                  | Text Rep. | Acc_C | Acc_T | Acc_D | Acc | 
+| Methods                  | Text Rep. | WUPS_C | WUPS_T | WUPS_D | WUPS | 
 | -------------------------| --------: | ----: | ----: | ----: | ---:| 
 | BlindQA                  |   GloVe   | 12.14 | 14.85 | 40.41 | 18.88 | 
 | [STVQA](https://openaccess.thecvf.com/content_cvpr_2017/papers/Jang_TGIF-QA_Toward_Spatio-Temporal_CVPR_2017_paper.pdf) [CVPR17]  |   GloVe   | 12.52 | 14.57 | 45.64 | 20.08 | 
