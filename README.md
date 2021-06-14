@@ -20,7 +20,7 @@ Please create an env for this project using anaconda (should install [anaconda](
 Please download the pre-computed features and QA annotations from [here](https://drive.google.com/drive/folders/14jSt4sGFQaZxBu4AGL2Svj34fUhcK2u0?usp=sharing). There are 3 zip files: 
 - ```['vid_feat.zip']```: Appearance and motion feature for video representation (same as multi-choice QA).
 - ```['nextqa.zip']```: Annotations of QAs and GloVe Embeddings (open-ended version). 
-- ```['models.zip']```: Learned HGA model (open-ended version). 
+- ```['models.zip']```: HGA model (open-ended version). 
 
 After downloading the data, please create a folder ```['data/feats']``` at the same directory as ```['NExT-OE']```, then unzip the video features into it. You will have directories like ```['data/feats/vid_feat/', and 'NExT-OE/']``` in your workspace. Please unzip the files in ```['nextqa.zip']``` into ```['NExT-OE/dataset/nextqa']``` and ```['models.zip']``` into ```['NExT-OE/models/']```. 
 
