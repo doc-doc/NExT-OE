@@ -20,7 +20,7 @@ Please create an env for this project using anaconda (should install [anaconda](
 Please download the pre-computed features and QA annotations from [here](https://drive.google.com/drive/folders/14jSt4sGFQaZxBu4AGL2Svj34fUhcK2u0?usp=sharing). There are 3 zip files: 
 - ```['vid_feat.zip']```: Appearance and motion feature for video representation (same as multi-choice QA).
 - ```['nextqa.zip']```: Annotations of QAs and GloVe Embeddings (open-ended version). 
-- ```['models.zip']```: Learned HGA model (open-ended version). 
+- ```['models.zip']```: HGA model (open-ended version). 
 
 After downloading the data, please create a folder ```['data/feats']``` at the same directory as ```['NExT-OE']```, then unzip the video features into it. You will have directories like ```['data/feats/vid_feat/', and 'NExT-OE/']``` in your workspace. Please unzip the files in ```['nextqa.zip']``` into ```['NExT-OE/dataset/nextqa']``` and ```['models.zip']``` into ```['NExT-OE/models/']```. 
 
@@ -43,7 +43,7 @@ If you want to train the model, please run
 ```
 It will train the model and save to ['models']. (*The results may be slightly different depending on the environments*)
 ## Results
-| Methods                  | Text Rep. | Acc_C | Acc_T | Acc_D | Acc | 
+| Methods                  | Text Rep. | WUPS_C | WUPS_T | WUPS_D | WUPS | 
 | -------------------------| --------: | ----: | ----: | ----: | ---:| 
 | BlindQA                  |   GloVe   | 12.14 | 14.85 | 40.41 | 18.88 | 
 | [STVQA](https://openaccess.thecvf.com/content_cvpr_2017/papers/Jang_TGIF-QA_Toward_Spatio-Temporal_CVPR_2017_paper.pdf) [CVPR17]  |   GloVe   | 12.52 | 14.57 | 45.64 | 20.08 | 
