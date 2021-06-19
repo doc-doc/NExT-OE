@@ -42,7 +42,7 @@ class HGA(nn.Module):
             nn.Linear(hidden_size, hidden_size // 2),
             nn.Tanh(),
             nn.Linear(hidden_size // 2, 1),
-            nn.Softmax(dim=-1))
+            nn.Softmax(dim=-1)) #dim=-2 for attention-pooling otherwise sum-pooling
 
         self.global_fusion = fusions.Block(
             [hidden_size, hidden_size], hidden_size, dropout_input=input_dropout_p)
