@@ -50,11 +50,11 @@ It will train the model and save to ['models']. (*The results may be slightly di
 | Methods                  | Text Rep. | WUPS_C | WUPS_T | WUPS_D | WUPS | 
 | -------------------------| --------: | ----: | ----: | ----: | ---:| 
 | BlindQA                  |   GloVe   | 12.14 | 14.85 | 40.41 | 18.88 | 
-| [STVQA](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/STVQA.py) [CVPR17](https://openaccess.thecvf.com/content_cvpr_2017/papers/Jang_TGIF-QA_Toward_Spatio-Temporal_CVPR_2017_paper.pdf)  |   GloVe   | 12.52 | 14.57 | 45.64 | 20.08 | 
-| [UATT](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/UATT.py)[TIP17](https://ieeexplore.ieee.org/document/8017608) | GloVe | 13.62 | **16.23** | 43.41 | 20.65 |
-| [HME](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/HME.py)[CVPR19](https://openaccess.thecvf.com/content_CVPR_2019/papers/Fan_Heterogeneous_Memory_Enhanced_Multimodal_Attention_Model_for_Video_Question_Answering_CVPR_2019_paper.pdf)    |   GloVe   | 12.83 | 14.76 | 45.13 | 20.18 | 
-| [HCRN] [CVPR20]((https://openaccess.thecvf.com/content_CVPR_2020/papers/Le_Hierarchical_Conditional_Relation_Networks_for_Video_Question_Answering_CVPR_2020_paper.pdf))   |   GloVe   | 12.53 | 15.37 | 45.29 | 20.25 | 
-| [HGA](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/HGA.py)[AAAI20](https://ojs.aaai.org//index.php/AAAI/article/view/6767)    |   GloVe   | **14.76** | 14.90 | **46.60** | **21.48** |
+| [STVQA](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/STVQA.py) ([CVPR17](https://openaccess.thecvf.com/content_cvpr_2017/papers/Jang_TGIF-QA_Toward_Spatio-Temporal_CVPR_2017_paper.pdf))  |   GloVe   | 12.52 | 14.57 | 45.64 | 20.08 | 
+| [UATT](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/UATT.py) ([TIP17](https://ieeexplore.ieee.org/document/8017608)) | GloVe | 13.62 | **16.23** | 43.41 | 20.65 |
+| [HME](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/HME.py) ([CVPR19](https://openaccess.thecvf.com/content_CVPR_2019/papers/Fan_Heterogeneous_Memory_Enhanced_Multimodal_Attention_Model_for_Video_Question_Answering_CVPR_2019_paper.pdf))   |   GloVe   | 12.83 | 14.76 | 45.13 | 20.18 | 
+| [HCRN](https://github.com/thaolmk54/hcrn-videoqa) ([CVPR20](https://openaccess.thecvf.com/content_CVPR_2020/papers/Le_Hierarchical_Conditional_Relation_Networks_for_Video_Question_Answering_CVPR_2020_paper.pdf))   |   GloVe   | 12.53 | 15.37 | 45.29 | 20.25 | 
+| [HGA](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/HGA.py) ([AAAI20](https://ojs.aaai.org//index.php/AAAI/article/view/6767))    |   GloVe   | **14.76** | 14.90 | **46.60** | **21.48** |
 
 ## Multi-choice QA *vs.* Open-ended QA
 ![vis mc_oe](./images/res-mc-oe.png)
