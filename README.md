@@ -4,6 +4,10 @@ We reproduce some SOTA VideoQA methods to provide benchmark results for our NExT
 
 NExT-QA is a VideoQA benchmark targeting the explanation of video contents. It challenges QA models to reason about the causal and temporal actions and understand the rich object interactions in daily activities. We set up both multi-choice and open-ended QA tasks on the dataset. <strong>This repo. provides resources for open-ended QA</strong>; multi-choice QA is found in [NExT-QA](https://github.com/doc-doc/NExT-QA). For more details, please refer to our [dataset](https://doc-doc.github.io/docs/nextqa.html) page.
 
+## Todo
+1. [ ] <s>Open online evaluation server</s> and release [test data]().
+2. [ ] <s>Release spatial feature</s>.
+3. [ ] Release RoI feature.
 ## Environment
 
 Anaconda 4.8.4, python 3.6.8, pytorch 1.6 and cuda 10.2. For other libs, please refer to the file requirements.txt.
@@ -46,11 +50,11 @@ It will train the model and save to ['models']. (*The results may be slightly di
 | Methods                  | Text Rep. | WUPS_C | WUPS_T | WUPS_D | WUPS | 
 | -------------------------| --------: | ----: | ----: | ----: | ---:| 
 | BlindQA                  |   GloVe   | 12.14 | 14.85 | 40.41 | 18.88 | 
-| [STVQA](https://openaccess.thecvf.com/content_cvpr_2017/papers/Jang_TGIF-QA_Toward_Spatio-Temporal_CVPR_2017_paper.pdf) [CVPR17]  |   GloVe   | 12.52 | 14.57 | 45.64 | 20.08 | 
-| [UATT](https://ieeexplore.ieee.org/document/8017608) [TIP17] | GloVe | 13.62 | **16.23** | 43.41 | 20.65 |
-| [HME](https://openaccess.thecvf.com/content_CVPR_2019/papers/Fan_Heterogeneous_Memory_Enhanced_Multimodal_Attention_Model_for_Video_Question_Answering_CVPR_2019_paper.pdf) [CVPR19]    |   GloVe   | 12.83 | 14.76 | 45.13 | 20.18 | 
-| [HCRN](https://openaccess.thecvf.com/content_CVPR_2020/papers/Le_Hierarchical_Conditional_Relation_Networks_for_Video_Question_Answering_CVPR_2020_paper.pdf) [CVPR20]   |   GloVe   | 12.53 | 15.37 | 45.29 | 20.25 | 
-| [HGA](https://ojs.aaai.org//index.php/AAAI/article/view/6767) [AAAI20]    |   GloVe   | **14.76** | 14.90 | **46.60** | **21.48** |
+| [STVQA](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/STVQA.py) [CVPR17](https://openaccess.thecvf.com/content_cvpr_2017/papers/Jang_TGIF-QA_Toward_Spatio-Temporal_CVPR_2017_paper.pdf)  |   GloVe   | 12.52 | 14.57 | 45.64 | 20.08 | 
+| [UATT](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/UATT.py)[TIP17](https://ieeexplore.ieee.org/document/8017608) | GloVe | 13.62 | **16.23** | 43.41 | 20.65 |
+| [HME](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/HME.py)[CVPR19](https://openaccess.thecvf.com/content_CVPR_2019/papers/Fan_Heterogeneous_Memory_Enhanced_Multimodal_Attention_Model_for_Video_Question_Answering_CVPR_2019_paper.pdf)    |   GloVe   | 12.83 | 14.76 | 45.13 | 20.18 | 
+| [HCRN] [CVPR20]((https://openaccess.thecvf.com/content_CVPR_2020/papers/Le_Hierarchical_Conditional_Relation_Networks_for_Video_Question_Answering_CVPR_2020_paper.pdf))   |   GloVe   | 12.53 | 15.37 | 45.29 | 20.25 | 
+| [HGA](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/HGA.py)[AAAI20](https://ojs.aaai.org//index.php/AAAI/article/view/6767)    |   GloVe   | **14.76** | 14.90 | **46.60** | **21.48** |
 
 ## Multi-choice QA *vs.* Open-ended QA
 ![vis mc_oe](./images/res-mc-oe.png)
@@ -65,9 +69,5 @@ It will train the model and save to ['models']. (*The results may be slightly di
     pages     = {9777-9786}
 }
 ```
-## Todo
-1. [ ] Open online evaluation server and release test data.
-2. [ ] Release spatial feature.
-3. [ ] Release RoI feature.
 ## Acknowledgement
 Our reproduction of the methods is based on the respective official repositories, we thank the authors to release their code. If you use the related part, please cite the corresponding paper commented in the code.
