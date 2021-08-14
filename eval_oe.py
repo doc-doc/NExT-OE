@@ -12,7 +12,7 @@ def remove_stop(sentence):
     return ' '.join(words)
 
 
-def evaluate(res_file, ref_file):
+def evaluate(res_file, ref_file, ref_file_add):
     """
     :param res_file:
     :param ref_file:
@@ -20,6 +20,10 @@ def evaluate(res_file, ref_file):
     """
     res = load_file(res_file)
 
+    multi_ref_ans = False
+    if osp.exists(ref_file_add):
+        add_ref = load_file(ref_file_add)
+        multi_ref_ans = True 
     refer = pd.read_csv(ref_file)
     ref_num = len(refer)
     group_dict = {'CW': [], 'CH': [], 'TN': [], 'TC': [], 'DL': [], 'DB':[], 'DC': [], 'DO': []}
@@ -48,13 +52,21 @@ def evaluate(res_file, ref_file):
 
             gt_ans = remove_stop(ans)
             pred_ans = remove_stop(pred_ans_src)
-
-            if qtype == 'DC' or qtype == 'DB':
-                cur_0 = 1 if pred_ans == gt_ans else 0
-                cur_9 = cur_0
+            if multi_ref_ans and (video in add_ref):
+                gt_ans_add = remove_stop(add_ref[video][qid])
+                if qtype == 'DC' or qtype == 'DB':
+                    cur_0 = 1 if pred_ans == gt_ans_add or pred_ans == gt_ans else 0
+                    cur_9 = cur_0
+                else:
+                    cur_0 = max(get_wups(pred_ans, gt_ans, 0), get_wups(pred_ans, gt_ans_add, 0))
+                    cur_9 = max(get_wups(pred_ans, gt_ans, 0.9), get_wups(pred_ans, gt_ans_add, 0.9))
             else:
-                cur_0 = get_wups(pred_ans,  gt_ans, 0)
-                cur_9 = get_wups(pred_ans, gt_ans, 0.9)
+                if qtype == 'DC' or qtype == 'DB':
+                    cur_0 = 1 if pred_ans == gt_ans else 0
+                    cur_9 = cur_0
+                else:
+                    cur_0 = get_wups(pred_ans,  gt_ans, 0)
+                    cur_9 = get_wups(pred_ans, gt_ans, 0.9)
             wups0[qtype] += cur_0
             wups9[qtype] += cur_9
 
@@ -103,7 +115,8 @@ def main(filename, mode):
     res_file = osp.join(res_dir, filename)
     print(f'Evaluate on {res_file}')
     ref_file = 'dataset/nextqa/{}.csv'.format(mode)
-    evaluate(res_file, ref_file)
+    ref_file_add = 'dataset/nextqa/add_reference_answer_{}.json'.format(mode)
+    evaluate(res_file, ref_file, ref_file_add)
 
 
 if __name__ == "__main__":

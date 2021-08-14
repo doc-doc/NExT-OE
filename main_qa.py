@@ -35,7 +35,7 @@ def main(args):
     glove_embed_qns = 'dataset/{}/{}_embed.npy'.format(dataset, word_type)
     glove_embed_ans = 'dataset/{}/{}_embed.npy'.format(dataset, word_type)
     checkpoint_path = 'models'
-    model_type = 'UATT'
+    model_type = 'HGA'
 
     model_prefix = 'same-att-qns23ans7'
     vis_step = 116
