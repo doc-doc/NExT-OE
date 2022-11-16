@@ -58,6 +58,13 @@ It will train the model and save to ['models']. (*The results may be slightly di
 
 ## Multi-choice QA *vs.* Open-ended QA
 ![vis mc_oe](./images/res-mc-oe.png)
+
+## Some Latest Results
+| Methods                  | Highlight | Val (WUPS@All)   | Test (WUPS@All) | 
+| -------------------------| --------: | ----: | ----:| 
+| [Flamingo(zero-shot)](https://arxiv.org/pdf/2204.14198.pdf)                |   Pretrain   | -     | 26.7|
+| [Flamingo(32-shot)](https://arxiv.org/pdf/2204.14198.pdf)                |   Pretrain   | -     | 33.5|
+
 ## Citation
 ```
 @InProceedings{xiao2021next,
