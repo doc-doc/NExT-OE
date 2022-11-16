@@ -1,4 +1,4 @@
-# NExT-QA <img src="images/logo.png" height="64" width="128">
+# [NExT-QA](https://arxiv.org/pdf/2105.08276.pdf) <img src="images/logo.png" height="64" width="128">
 
 We reproduce some SOTA VideoQA methods to provide benchmark results for our NExT-QA dataset accepted to CVPR2021. 
 
@@ -46,7 +46,7 @@ If you want to train the model, please run
 >./main.sh 0 train # Train the model with GPU id 0
 ```
 It will train the model and save to ['models']. (*The results may be slightly different depending on the environments*)
-## Results
+## Results on Val
 | Methods                  | Text Rep. | WUPS_C | WUPS_T | WUPS_D | WUPS | 
 | -------------------------| --------: | ----: | ----: | ----: | ---:| 
 | BlindQA                  |   GloVe   | 12.14 | 14.85 | 40.41 | 18.88 | 
@@ -56,14 +56,16 @@ It will train the model and save to ['models']. (*The results may be slightly di
 | [HCRN](https://github.com/thaolmk54/hcrn-videoqa) ([CVPR20](https://openaccess.thecvf.com/content_CVPR_2020/papers/Le_Hierarchical_Conditional_Relation_Networks_for_Video_Question_Answering_CVPR_2020_paper.pdf))   |   GloVe   | 12.53 | 15.37 | 45.29 | 20.25 | 
 | [HGA](https://github.com/doc-doc/NExT-OE/blob/main/networks/VQAModel/HGA.py) ([AAAI20](https://ojs.aaai.org//index.php/AAAI/article/view/6767))    |   GloVe   | **14.76** | 14.90 | **46.60** | **21.48** |
 
+Please refer to our paper for results on the test set.
 ## Multi-choice QA *vs.* Open-ended QA
 ![vis mc_oe](./images/res-mc-oe.png)
 
 ## Some Latest Results
-| Methods                  | Highlight | Val (WUPS@All)   | Test (WUPS@All) | 
-| -------------------------| --------: | ----: | ----:| 
-| [Flamingo(zero-shot)](https://arxiv.org/pdf/2204.14198.pdf)                |   Pretrain   | -     | 26.7|
-| [Flamingo(32-shot)](https://arxiv.org/pdf/2204.14198.pdf)                |   Pretrain   | -     | 33.5|
+| Methods                  | Publication | Highlight | Val (WUPS@All)   | Test (WUPS@All) | 
+| -------------------------| --------:   |--------:  | ----:            | ----:| 
+|[HGA](https://ojs.aaai.org/index.php/AAAI/article/view/6767) | AAAI'20 | Heterogenous Graph | 21.5 | 25.2 |
+| [Flamingo(0-shot)](https://arxiv.org/pdf/2204.14198.pdf) | arXiv by DeepMind            |   VL foundation model   | -     | 26.7|
+| [Flamingo(32-shot)](https://arxiv.org/pdf/2204.14198.pdf)   | arVix by DeepMind            |  VL foundation model   | -     | 33.5|
 
 ## Citation
 ```
