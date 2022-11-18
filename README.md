@@ -64,7 +64,7 @@ Please refer to our paper for results on the test set.
 | Methods                  | Publication | Highlight | Val (WUPS@All)   | Test (WUPS@All) | 
 | -------------------------| --------:   |--------:  | ----:            | ----:| 
 |[HGA](https://ojs.aaai.org/index.php/AAAI/article/view/6767) | AAAI'20 | Heterogenous Graph | 21.5 | 25.2 |
-| [Flamingo(0-shot)](https://arxiv.org/pdf/2204.14198.pdf) | NeurPS'22            |   VL foundation model   | -     | 26.7|
+| [Flamingo(0-shot)](https://arxiv.org/pdf/2204.14198.pdf) | NeurIPS'22            |   VL foundation model   | -     | 26.7|
 | [Flamingo(32-shot)](https://arxiv.org/pdf/2204.14198.pdf)   | NeurIPS'22            |  VL foundation model   | -     | 33.5|
 
 ## Citation
