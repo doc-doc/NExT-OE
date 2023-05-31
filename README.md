@@ -5,9 +5,9 @@ We reproduce some SOTA VideoQA methods to provide benchmark results for our NExT
 NExT-QA is a VideoQA benchmark targeting the explanation of video contents. It challenges QA models to reason about the causal and temporal actions and understand the rich object interactions in daily activities. We set up both multi-choice and open-ended QA tasks on the dataset. <strong>This repo. provides resources for open-ended QA</strong>; multi-choice QA is found in [NExT-QA](https://github.com/doc-doc/NExT-QA). For more details, please refer to our [dataset](https://doc-doc.github.io/docs/nextqa.html) page.
 
 ## Todo
-1. [ ] <s>Open online evaluation server</s> and release [test data](https://drive.google.com/file/d/1bXBFN61PaTSHTnJqz3R79mpIgEQPFGIU/view?usp=sharing).
-2. [ ] <s>Release spatial feature</s>.
-3. [ ] Release RoI feature.
+1. [x] Raw Videos are the same with [NExT-QA(MC)](https://github.com/doc-doc/NExT-QA).
+2. [ ] <s>Open online evaluation server</s> and release [test data](https://drive.google.com/file/d/1bXBFN61PaTSHTnJqz3R79mpIgEQPFGIU/view?usp=sharing).
+3. [x] RoI features are the same with [NExT-QA(MC)](https://github.com/doc-doc/NExT-QA).
 ## Environment
 
 Anaconda 4.8.4, python 3.6.8, pytorch 1.6 and cuda 10.2. For other libs, please refer to the file requirements.txt.
@@ -64,8 +64,9 @@ Please refer to our paper for results on the test set.
 | Methods                  | Publication | Highlight | Val (WUPS@All)   | Test (WUPS@All) | 
 | -------------------------| --------:   |--------:  | ----:            | ----:| 
 |[HGA](https://ojs.aaai.org/index.php/AAAI/article/view/6767) | AAAI'20 | Heterogenous Graph | 21.5 | 25.2 |
-| [Flamingo(0-shot)](https://arxiv.org/pdf/2204.14198.pdf) | NeurIPS'22            |   VL foundation model   | -     | 26.7|
-| [Flamingo(32-shot)](https://arxiv.org/pdf/2204.14198.pdf)   | NeurIPS'22            |  VL foundation model   | -     | 33.5|
+| [Flamingo(0-shot)](https://arxiv.org/pdf/2204.14198.pdf) by DeepMind | NeurIPS'22            |   VL foundation model   | -     | 26.7|
+| [Flamingo(32-shot)](https://arxiv.org/pdf/2204.14198.pdf) by DeepMind   | NeurIPS'22            |  VL foundation model   | -     | 33.5|
+| [PaLI-X](https://arxiv.org/pdf/2305.18565.pdf) by Google Research | ArXiv | VL foundation model | - | 38.3 |
 
 ## Citation
 ```
