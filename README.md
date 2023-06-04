@@ -66,7 +66,7 @@ Please refer to our paper for results on the test set.
 |[HGA](https://ojs.aaai.org/index.php/AAAI/article/view/6767) | AAAI'20 | Heterogenous Graph | 21.5 | 25.2 |
 | [Flamingo(0-shot)](https://arxiv.org/pdf/2204.14198.pdf) by DeepMind | NeurIPS'22            |   VL foundation model   | -     | 26.7|
 | [Flamingo(32-shot)](https://arxiv.org/pdf/2204.14198.pdf) by DeepMind   | NeurIPS'22            |  VL foundation model   | -     | 33.5|
-| [PaLI-X](https://arxiv.org/pdf/2305.18565.pdf) by Google Research | ArXiv | VL foundation model | - | 38.3 |
+| [PaLI-X](https://arxiv.org/pdf/2305.18565.pdf) by Google Research | arXiv | VL foundation model | - | 38.3 |
 
 ## Citation
 ```
