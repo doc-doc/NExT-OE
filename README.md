@@ -65,6 +65,7 @@ Please refer to our paper for results on the test set.
 | -------------------------| --------:   |--------:  | ----:            | ----:| 
 |[Emu(0-shot)](https://arxiv.org/pdf/2307.05222v1.pdf) by BAAI | arXiv'23 | VL foundation model | - | 23.4 |
 | [Flamingo(0-shot)](https://arxiv.org/pdf/2204.14198.pdf) by DeepMind | NeurIPS'22            |   VL foundation model   | -     | 26.7|
+| [KcGA](https://ojs.aaai.org/index.php/AAAI/article/view/25983) by Baidu | AAAI'23 | Knowledge base, GPT-2 | - | 28.2 | 
 | [Flamingo(32-shot)](https://arxiv.org/pdf/2204.14198.pdf) by DeepMind   | NeurIPS'22            |  VL foundation model   | -     | 33.5|
 | [PaLI-X](https://arxiv.org/pdf/2305.18565.pdf) by Google Research | arXiv'23 | VL foundation model | - | 38.3 |
 
